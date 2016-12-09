@@ -27,7 +27,7 @@ then
 fi
 
 echo "Pushing CI_BRANCH: ${CI_BRANCH}"
-docker tag "${DOCKERTAG}:latest" "${EXTERNAL_REGISTRY_BASE_DOMAIN}/${REPOSITORY_NAME}:${CI_BRANCH}"
+docker tag -f "${DOCKERTAG}:latest" "${EXTERNAL_REGISTRY_BASE_DOMAIN}/${REPOSITORY_NAME}:${CI_BRANCH}"
 if [ $? -ne 0 ]
 then
   echo "Unable to tag image, aborting"
